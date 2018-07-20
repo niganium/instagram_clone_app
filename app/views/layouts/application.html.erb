@@ -28,6 +28,7 @@
         </div>
         <div id="gnavi" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
+            <% if logged_in? %>
             <li><a href="/pictures">
               <i class="fas fa-th fa-2x"></i>
             </a></li>
@@ -36,6 +37,8 @@
                 <i class="far fa-plus-square fa-2x"></i>
               </a>
             </li>
+            <% else %>
+            <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
