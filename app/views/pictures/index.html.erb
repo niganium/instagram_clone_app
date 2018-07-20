@@ -1,0 +1,28 @@
+<div class="main pictures-index">
+  <div class="container">
+    <% @pictures.each do |picture| %>
+      <div class="pictures-index-item">
+        <div class="pictures-left col-md-offset-4">
+          <%= image_tag picture.user.icon_image %>
+        </div>
+        <div class="pictures-right text-center">
+          <div class="pictures-user-name text-center">
+            <%= link_to picture.user.name , user_path(current_user.id)%>
+          </div>
+          <div class="text-center picture-index-image">
+          <%= image_tag picture.image%>
+          </div>
+          <div class="text-center">
+            <h4>
+            <%= link_to picture.title , picture_path(picture.id)%>
+            </h4>
+            <br>
+            <h3>
+            <%= picture.content %>
+            </h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

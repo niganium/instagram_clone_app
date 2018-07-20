@@ -1,0 +1,38 @@
+
+<div class="text-center">
+  <ul>
+    <h2 class="show_picture_user_name">
+       <%= link_to @picture.user.name , user_path(current_user.id)%>
+    </h2>
+    <p class="show_picture_image">
+      <%= image_tag @picture.image %>
+    </p>
+    <h3 class="show_picture_title">
+      <%= @picture.title %>
+    </h3>
+    <p class="show_picture_content"> <%= @picture.content %></p>
+    <% if @picture.user == current_user %>
+    <h3>
+        <%= link_to '編集', edit_picture_path(@picture.id), class: 'far fa-edit' %>
+    </h3>
+      <h3>
+        <%= link_to '削除', picture_path(@picture.id), method: :delete,
+        data: { confirm: '本当に削除していいですか？' }, class: 'far fa-trash-alt'%>
+      </h3>
+    <% end %>
+
+
+    <% unless @picture.user == current_user %>
+      <% if @favorite.present? %>
+        <div>
+          <%= link_to 'お気に入り解除', favorite_path(picture_id: @picture.id), method: :delete%>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to 'お気に入り', favorites_path(picture_id: @picture.id), method: :post%>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+<br>
+</div>

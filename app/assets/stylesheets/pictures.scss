@@ -1,0 +1,56 @@
+// Place all the styles related to the pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.picture-form textarea{
+  font-size: 20px;
+  padding: 10px;
+  min-height: 140px;
+  border: 1px solid rgb(216, 218, 223);
+  resize: none;
+}
+
+.picture-form textarea input::-webkit-input-placeholder {
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+
+
+.pictures-index-item {
+  padding: 20px 20px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.pictures-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.pictures-user-name a {
+  font-weight: 600;
+}
+
+.pictures-user-name a:hover {
+  color: #3ecdc6;
+}
+
+.pictures-left {
+  width: 10%;
+}
+
+.pictures-right {
+  width: 90%;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.picture-index-image{
+  padding-top: 30px;
+}

@@ -1,0 +1,31 @@
+<div class="text-center">
+<h4 class="user_infomation"><%= @user.name %></h4>
+<div class-="text-center pictures-left">
+  <%= image_tag @user.icon_image %>
+</div>
+<p class="user_infomation">email: <%= @user.email %></p>
+<h3 class="user_infomation">
+  <%= link_to 'ユーザー情報を編集', edit_user_path(@user.id), class: 'far fa-edit' %>
+</h3>
+
+<div class="container">
+  <h1>お気に入り投稿一覧</h1>
+
+  <table>
+
+  <% if !@favorites_pictures.nil? %>
+    <% @favorites_pictures.each do |favorites_picture| %>
+      <tr>
+        <td class="index_favorite_picture"><%= favorites_picture.user.name %></td>
+        <td class="index_favorite_picture"><%= favorites_picture.title %></td>
+        <td class="index_favorite_picture"><%= favorites_picture.content %></td>
+        <td class="index_favorite_picture_image">
+          <%= image_tag favorites_picture.image %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+
+  </table>
+</div>
+</div>
