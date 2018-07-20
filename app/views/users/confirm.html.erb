@@ -1,3 +1,4 @@
+<div class="text-center">
 <h1>確認画面</h1>
 <%= form_with(model: @user, url: users_path, local: true) do |form| %>
   <%= form.hidden_field :name %>
@@ -21,3 +22,4 @@
   <%= hidden_field_tag :"cache[icon_image]",@user.icon_image.cache_name %>
   <%= form.submit "戻る", name: "back" %>
 <% end %>
+</div>
